@@ -1,0 +1,367 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>このページの作り方 &mdash; ntl-ros-pkg  ドキュメント</title>
+  
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/theme.css" type="text/css" />
+  
+    <link rel="stylesheet" href="../_static/user.css" type="text/css" />
+  
+
+  
+    <link rel="top" title="ntl-ros-pkg  ドキュメント" href="../index.html"/>
+        <link rel="prev" title="ntl-ros-pkg documentation" href="../index.html"/>
+    <!-- Google アナリティクス -->
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-60855938-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        
+
+        
+          <a href="../index.html" class="icon icon-home"> ntl-ros-pkg
+        
+
+        
+          
+          <img src="../_static/nishidalab_logo.png" class="logo" />
+        
+        </a>
+
+        
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+          
+          
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">このページの作り方</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#e3-82-a4-e3-83-b3-e3-82-b9-e3-83-88-e3-83-bc-e3-83-ab">インストール</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#e7-b7-a8-e9-9b-86-e7-94-a8-e3-81-ae-e3-83-97-e3-83-ad-e3-82-b8-e3-82-a7-e3-82-af-e3-83-88-e3-82-92-e3-82-af-e3-83-ad-e3-83-bc-e3-83-b3">編集用のプロジェクトをクローン</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#e3-83-87-e3-83-97-e3-83-ad-e3-82-a4-e7-94-a8-e3-81-ae-e3-83-aa-e3-83-9d-e3-82-b8-e3-83-88-e3-83-aa-e3-82-92-e3-82-af-e3-83-ad-e3-83-bc-e3-83-b3">デプロイ用のリポジトリをクローン</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#e3-83-9a-e3-83-bc-e3-82-b8-e3-82-92-e4-bd-9c-e3-82-8b">ページを作る</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#e3-82-b3-e3-83-b3-e3-83-91-e3-82-a4-e3-83-ab">コンパイル</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#e3-82-b5-e3-82-a4-e3-83-88-e6-9b-b4-e6-96-b0">サイト更新</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#e6-96-87-e6-b3-95">文法</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#e3-82-b3-e3-83-bc-e3-83-89">コード</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#e7-94-bb-e5-83-8f">画像</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#e5-8b-95-e7-94-bb">動画</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#e6-95-b0-e5-bc-8f">数式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#e7-ae-87-e6-9d-a1-e6-9b-b8-e3-81-8d">箇条書き</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rst-e3-81-ae-e4-bd-bf-e3-81-88-e3-81-9d-e3-81-86-e3-81-aa-e3-82-84-e3-81-a4">rstの使えそうなやつ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#e5-8f-82-e8-80-83-e3-83-9a-e3-83-bc-e3-82-b8">参考ページ</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">ntl-ros-pkg</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li>このページの作り方</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/pages/000_test.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document">
+            
+  <div class="section" id="e3-81-93-e3-81-ae-e3-83-9a-e3-83-bc-e3-82-b8-e3-81-ae-e4-bd-9c-e3-82-8a-e6-96-b9">
+<span id="%E3%81%93%E3%81%AE%E3%83%9A%E3%83%BC%E3%82%B8%E3%81%AE%E4%BD%9C%E3%82%8A%E6%96%B9"></span><h1>このページの作り方<a class="headerlink" href="#e3-81-93-e3-81-ae-e3-83-9a-e3-83-bc-e3-82-b8-e3-81-ae-e4-bd-9c-e3-82-8a-e6-96-b9" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>このWebページは、Sphinxと呼ばれるPythonで書かれたドキュメント生成ツールを使ってかかれています。以下に作成方法を記述します。</p>
+<div class="section" id="e3-82-a4-e3-83-b3-e3-82-b9-e3-83-88-e3-83-bc-e3-83-ab">
+<span id="%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB"></span><h2>インストール<a class="headerlink" href="#e3-82-a4-e3-83-b3-e3-82-b9-e3-83-88-e3-83-bc-e3-83-ab" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>このページを編集するための環境を整える．</p>
+<div class="highlight-bash"><div class="highlight"><pre>sudo apt-get install python-pip
+sudo apt-get install python-setuptools
+sudo pip install sphinx commonmark <span class="nv">recommonmark</span><span class="o">==</span>0.4.0
+sudo pip install sphinx_rtd_theme
+sudo pip install sphinx-autobuild
+</pre></div>
+</div>
+</div>
+<div class="section" id="e7-b7-a8-e9-9b-86-e7-94-a8-e3-81-ae-e3-83-97-e3-83-ad-e3-82-b8-e3-82-a7-e3-82-af-e3-83-88-e3-82-92-e3-82-af-e3-83-ad-e3-83-bc-e3-83-b3">
+<span id="%E7%B7%A8%E9%9B%86%E7%94%A8%E3%81%AE%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%82%92%E3%82%AF%E3%83%AD%E3%83%BC%E3%83%B3"></span><h2>編集用のプロジェクトをクローン<a class="headerlink" href="#e7-b7-a8-e9-9b-86-e7-94-a8-e3-81-ae-e3-83-97-e3-83-ad-e3-82-b8-e3-82-a7-e3-82-af-e3-83-88-e3-82-92-e3-82-af-e3-83-ad-e3-83-bc-e3-83-b3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre>git clone git@github.com:ntl-ros-pkg/ntl-ros-pkg-doc.git
+<span class="nb">cd </span>ntl-ros-pkg-doc
+sudo cp tmp/parser.py /usr/local/lib/python2.7/dist-packages/recommonmark
+</pre></div>
+</div>
+</div>
+<div class="section" id="e3-83-87-e3-83-97-e3-83-ad-e3-82-a4-e7-94-a8-e3-81-ae-e3-83-aa-e3-83-9d-e3-82-b8-e3-83-88-e3-83-aa-e3-82-92-e3-82-af-e3-83-ad-e3-83-bc-e3-83-b3">
+<span id="%E3%83%87%E3%83%97%E3%83%AD%E3%82%A4%E7%94%A8%E3%81%AE%E3%83%AA%E3%83%9D%E3%82%B8%E3%83%88%E3%83%AA%E3%82%92%E3%82%AF%E3%83%AD%E3%83%BC%E3%83%B3"></span><h2>デプロイ用のリポジトリをクローン<a class="headerlink" href="#e3-83-87-e3-83-97-e3-83-ad-e3-82-a4-e7-94-a8-e3-81-ae-e3-83-aa-e3-83-9d-e3-82-b8-e3-83-88-e3-83-aa-e3-82-92-e3-82-af-e3-83-ad-e3-83-bc-e3-83-b3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">cd </span>ntl-ros-pkg-doc
+mkdir build
+<span class="nb">cd </span>build 
+git clone git@github.com:ntl-ros-pkg/ntl-ros-pkg.github.io.git html
+</pre></div>
+</div>
+</div>
+<div class="section" id="e3-83-9a-e3-83-bc-e3-82-b8-e3-82-92-e4-bd-9c-e3-82-8b">
+<span id="%E3%83%9A%E3%83%BC%E3%82%B8%E3%82%92%E4%BD%9C%E3%82%8B"></span><h2>ページを作る<a class="headerlink" href="#e3-83-9a-e3-83-bc-e3-82-b8-e3-82-92-e4-bd-9c-e3-82-8b" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">source/pages</span></code>に<code class="docutils literal"><span class="pre">.md</span></code>ファイルを作成．</p>
+<div class="highlight-rst"><div class="highlight"><pre><span class="p">..</span> <span class="ow">toctree</span><span class="p">::</span>
+   <span class="nc">:maxdepth:</span> <span class="nf">2</span>
+
+   pages/test.md
+   pages/test2.md
+</pre></div>
+</div>
+<p>のようにインデックスに追加しておく．</p>
+</div>
+<div class="section" id="e3-82-b3-e3-83-b3-e3-83-91-e3-82-a4-e3-83-ab">
+<span id="%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%AB"></span><h2>コンパイル<a class="headerlink" href="#e3-82-b3-e3-83-b3-e3-83-91-e3-82-a4-e3-83-ab" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre>make livehtml
+</pre></div>
+</div>
+<p>で<code class="docutils literal"><span class="pre">.md</span></code>に変更があると自動的にコンパイルしてくれるようになる．
+そのあと<code class="docutils literal"><span class="pre">http://localhost:4000</span></code>にアクセス・</p>
+<p>うまく動かない場合は</p>
+<div class="highlight-bash"><div class="highlight"><pre>make html
+</pre></div>
+</div>
+<p>を普通に実行してみる．</p>
+</div>
+<div class="section" id="e3-82-b5-e3-82-a4-e3-83-88-e6-9b-b4-e6-96-b0">
+<span id="%E3%82%B5%E3%82%A4%E3%83%88%E6%9B%B4%E6%96%B0"></span><h2>サイト更新<a class="headerlink" href="#e3-82-b5-e3-82-a4-e3-83-88-e6-9b-b4-e6-96-b0" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span class="nb">cd </span>build/html
+git add -A
+git commit -m <span class="s2">&quot;000_test.mdの追加&quot;</span>
+git push 
+</pre></div>
+</div>
+</div>
+<div class="section" id="e6-96-87-e6-b3-95">
+<span id="%E6%96%87%E6%B3%95"></span><h2>文法<a class="headerlink" href="#e6-96-87-e6-b3-95" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="section" id="e3-82-b3-e3-83-bc-e3-83-89">
+<span id="%E3%82%B3%E3%83%BC%E3%83%89"></span><h3>コード<a class="headerlink" href="#e3-82-b3-e3-83-bc-e3-83-89" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">function</span><span class="p">():</span>
+    <span class="k">return</span> <span class="bp">True</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="e7-94-bb-e5-83-8f">
+<span id="%E7%94%BB%E5%83%8F"></span><h3>画像<a class="headerlink" href="#e7-94-bb-e5-83-8f" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><img alt="6axis" src="../_images/concept.jpg" /></p>
+</div>
+<div class="section" id="e5-8b-95-e7-94-bb">
+<span id="%E5%8B%95%E7%94%BB"></span><h3>動画<a class="headerlink" href="#e5-8b-95-e7-94-bb" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><div class="youtube"><iframe width="560" height="315" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen src="http://www.youtube.com/embed/wBqJ2golL4w">
+</iframe></div></p></div>
+<div class="section" id="e6-95-b0-e5-bc-8f">
+<span id="%E6%95%B0%E5%BC%8F"></span><h3>数式<a class="headerlink" href="#e6-95-b0-e5-bc-8f" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">レスポンスデザインが崩れるので使用は最小限に</p>
+</div>
+<p>係数を比較すると<span class="math">\(\beta_0 = K_E\)</span>，<span class="math">\(\beta_1 = \displaystyle\frac{JR_a}{K_T}\)</span>，<span class="math">\(\beta_2 = \displaystyle\frac{JL_a}{K_T}\)</span>となる．
+実際の値を計算すると，<span class="math">\(\beta_0 = 8.50\)</span>，<span class="math">\(\beta_1 = 0.176\)</span>，<span class="math">\(\beta_2 = 3.53\times10^{-3}\)</span>となった．</p>
+<div class="math">
+\[\begin{split} Y(s) &amp; =&amp; P(s)\left\{\frac{K_i}{s}(R(s)-Y(s))-F(s)Y(s)\right\}\nonumber \\
+  \left\{1 + P(s)\left(\frac{K_i}{s}+F(s)\right)\right\}Y(s) &amp; = &amp; \frac{K_iP(s)}{s}R(s)\nonumber \\
+  \frac{Y(s)}{R(s)} &amp; = &amp; \frac{\displaystyle\frac{K_iP(s)}{s}}{1 + P(s)\left(\displaystyle\frac{K_i}{s}+F(s)\right)}\nonumber \\
+  \frac{Y(s)}{R(s)} &amp; = &amp; \frac{1}{1 + \displaystyle\frac{s}{K_i}\left(\displaystyle\frac{1}{P(s)}+F(s)\right)}\nonumber \\
+T(s) &amp; = &amp; \frac{Y(s)}{R(s)} = \frac{1}{1 + \displaystyle\frac{s}{K_i}\left(\displaystyle\frac{1}{P(s)}+F(s)\right)}
+\end{split}\]</div>
+</div>
+<div class="section" id="e7-ae-87-e6-9d-a1-e6-9b-b8-e3-81-8d">
+<span id="%E7%AE%87%E6%9D%A1%E6%9B%B8%E3%81%8D"></span><h3>箇条書き<a class="headerlink" href="#e7-ae-87-e6-9d-a1-e6-9b-b8-e3-81-8d" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ul class="simple">
+<li>Mark</li>
+<li>ダウン</li>
+<li>だよ</li>
+</ul>
+</div>
+<div class="section" id="rst-e3-81-ae-e4-bd-bf-e3-81-88-e3-81-9d-e3-81-86-e3-81-aa-e3-82-84-e3-81-a4">
+<span id="rst%E3%81%AE%E4%BD%BF%E3%81%88%E3%81%9D%E3%81%86%E3%81%AA%E3%82%84%E3%81%A4"></span><h3>rstの使えそうなやつ<a class="headerlink" href="#rst-e3-81-ae-e4-bd-bf-e3-81-88-e3-81-9d-e3-81-86-e3-81-aa-e3-82-84-e3-81-a4" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<dl class="class">
+<dt id="recommonmark.transform.AutoStructify">
+<em class="property">class </em><code class="descclassname">recommonmark.transform.</code><code class="descname">AutoStructify</code><span class="sig-paren">(</span><em>document</em>, <em>startnode=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/recommonmark/transform.html#AutoStructify"><span class="viewcode-link">[ソース]</span></a><a class="headerlink" href="#recommonmark.transform.AutoStructify" title="この定義へのパーマリンク">¶</a></dt>
+<dd><p>ベースクラス: <code class="xref py py-class docutils literal"><span class="pre">docutils.transforms.Transform</span></code></p>
+<p>Automatically try to transform blocks to sphinx directives.</p>
+<p>This class is designed to handle AST generated by CommonMarkParser.</p>
+</dd></dl>
+
+<div class="admonition warning">
+<p class="first admonition-title">警告</p>
+<p class="last">Its a note! in markdown!</p>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">重要</p>
+<p class="last">Its a note! in markdown!</p>
+</div>
+</div>
+</div>
+<div class="section" id="e5-8f-82-e8-80-83-e3-83-9a-e3-83-bc-e3-82-b8">
+<span id="%E5%8F%82%E8%80%83%E3%83%9A%E3%83%BC%E3%82%B8"></span><h2>参考ページ<a class="headerlink" href="#e5-8f-82-e8-80-83-e3-83-9a-e3-83-bc-e3-82-b8" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="39%" />
+<col width="61%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>AutoStructify Component</td>
+<td><a class="reference external" href="http://recommonmark.readthedocs.io/en/latest/auto_structify.html">http://recommonmark.readthedocs.io/en/latest/auto_structify.html</a></td>
+</tr>
+<tr class="row-even"><td>Sphinxを便利にして、みんなに使ってもらいたい</td>
+<td><a class="reference external" href="https://qiita.com/pashango2/items/d1b379b699af85b529ce">https://qiita.com/pashango2/items/d1b379b699af85b529ce</a></td>
+</tr>
+<tr class="row-odd"><td>Sphinx で markdown を扱う (無理やり日本語も)</td>
+<td><a class="reference external" href="https://qiita.com/leo-mon/items/46c43f0f97f730e64754">https://qiita.com/leo-mon/items/46c43f0f97f730e64754</a></td>
+</tr>
+<tr class="row-even"><td>Sphinxでの文章の書き方(reStructuredText)</td>
+<td><a class="reference external" href="http://planset-study-sphinx.readthedocs.io/ja/latest/04.html">http://planset-study-sphinx.readthedocs.io/ja/latest/04.html</a></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../index.html" class="btn btn-neutral" title="ntl-ros-pkg documentation" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright Nishida Lab.
+      最終更新: 2018/03/18
+    </p>
+  </div>
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="../_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
